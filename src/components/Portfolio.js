@@ -23,7 +23,7 @@ function Portfolio(){
 
         return(
       <>
-      
+      <h2>Your Portoflio</h2>
         
       <table className='portfolio-table'>
         <thead>
