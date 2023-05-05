@@ -12,7 +12,7 @@ function Portfolio(){
 
 
     function getPortfolio(){
-        fetch(`http://localhost:8001/stocks`, options)
+        fetch(`http://localhost:8001/users`, options)
         .then((res)=>res.json())
         .then((mydata)=>{setPortfolio(mydata)})
     }
@@ -38,7 +38,7 @@ function Portfolio(){
             {userStocks.map(stonk=>(
             <tr key ={stonk.symbol}>
             <td>{stonk.company}</td>
-            <td>{stonk.ymbol}</td>
+            <td>{stonk.symbol}</td>
             <td>{stonk.price_2007}</td>
             </tr>
             ))}
