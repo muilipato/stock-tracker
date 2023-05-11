@@ -12,7 +12,7 @@ function Portfolio({portfolio, removeFromPortfolio}){
                         {
                             portfolio.map(stock => (
                                 <li key = {stock.symbol}>
-                                    {stock.company}({stock.symbol})
+                                    {stock.company}({stock.symbol}) {stock.price_2007}
                                     <button onClick={() => removeFromPortfolio(stock)}>Delete</button>
                                 </li>
                                 ))

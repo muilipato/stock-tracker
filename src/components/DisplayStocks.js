@@ -1,11 +1,12 @@
 import React from 'react';
 import  {useState, useEffect} from 'react'
 import Portfolio from './Portfolio'
+import Description from './Description';
 
 function DisplayStocks(){
     const[stockdata , setData] = useState([]);
     const [portfolio, setPortfolio] = useState([]);
-
+    const [selectedStock, setSelectedStock] = useState(null);
  
     
     
@@ -34,6 +35,13 @@ function DisplayStocks(){
         const updatedPortfolio =portfolio.filter(item => item !== stock)
         setPortfolio(updatedPortfolio)
     }
+   const handleViewDesrciption = stock => {
+    setSelectedStock(stock)
+
+   }
+   const handleCloseDescription = () =>{
+   setSelectedStock(null)
+   }
 
     
     return(
@@ -59,7 +67,17 @@ function DisplayStocks(){
                         
                             <td>{stock.symbol}</td>
                             <td className='prices'>{stock.price_2007}</td>
-                            <td className ="description">{stock.description}</td>
+                            <td className ="description">{
+                            stock.description.length>50?(
+                                <>
+                                {stock.description.substring(0, 50)}...
+                                <button onClick={() => handleViewDesrciption(stock)}>View Description</button>
+                                </>
+                            ):(
+                                stock.description
+                            )
+                            }
+                            </td>
                             <td>
                                 <button onClick={() => addToPortfolio(stock)}>Add</button>
                             </td>
@@ -70,6 +88,14 @@ function DisplayStocks(){
                     </tbody>
                 </table>
                 <Portfolio portfolio={portfolio} removeFromPortfolio={removeFromPortfolio}/>
+                <div>
+                    <h2>Company Description</h2>
+                {
+                    selectedStock &&(
+                        <Description stock={selectedStock} onClose={handleCloseDescription}/>
+                    )
+                }
+                </div>
                 
             
             </div>
