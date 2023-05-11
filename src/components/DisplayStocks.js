@@ -4,6 +4,9 @@ import Portfolio from './Portfolio'
 
 function DisplayStocks(){
     const[stockdata , setData] = useState([]);
+    const [portfolio, setPortfolio] = useState([]);
+
+ 
     
     
     const options = {
@@ -20,6 +23,19 @@ function DisplayStocks(){
         getData();
     },[]);
     console.log(stockdata);
+
+    const addToPortfolio = stock => {
+        if(!portfolio.includes(stock)){
+            setPortfolio([...portfolio, stock]);
+        }
+
+    }
+    const removeFromPortfolio =stock => {
+        const updatedPortfolio =portfolio.filter(item => item !== stock)
+        setPortfolio(updatedPortfolio)
+    }
+
+    
     return(
        <div>
      
@@ -33,6 +49,7 @@ function DisplayStocks(){
                         <th>Symbol</th>
                         <th>Price</th>
                         <th>Description</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -43,12 +60,16 @@ function DisplayStocks(){
                             <td>{stock.symbol}</td>
                             <td className='prices'>{stock.price_2007}</td>
                             <td className ="description">{stock.description}</td>
+                            <td>
+                                <button onClick={() => addToPortfolio(stock)}>Add</button>
+                            </td>
 
                         </tr>
                     ))}
 
                     </tbody>
                 </table>
+                <Portfolio portfolio={portfolio} removeFromPortfolio={removeFromPortfolio}/>
                 
             
             </div>
