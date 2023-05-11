@@ -45,10 +45,10 @@ function DisplayStocks(){
 
     
     return(
-       <div>
-     
+       <div className='container'>
+        <h1> Stocks </h1>
         
-                <div>
+                <div className='table-container'>
                 <table>
                     <thead>
                     <tr>
@@ -87,8 +87,12 @@ function DisplayStocks(){
 
                     </tbody>
                 </table>
-                <Portfolio portfolio={portfolio} removeFromPortfolio={removeFromPortfolio}/>
-                <div>
+                
+            </div>
+            <div>
+            <Portfolio portfolio={portfolio} removeFromPortfolio={removeFromPortfolio}/>
+            </div>
+            <div>
                     <h2>Company Description</h2>
                 {
                     selectedStock &&(
@@ -96,9 +100,6 @@ function DisplayStocks(){
                     )
                 }
                 </div>
-                
-            
-            </div>
             
         
           
