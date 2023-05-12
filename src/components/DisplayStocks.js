@@ -16,7 +16,7 @@ function DisplayStocks(){
 
 
     function getData(){
-        fetch(`http://localhost:8001/stocks`, options)
+        fetch(`https://stocks-hqcq.onrender.com/stocks`, options)
         .then((res)=>res.json())
         .then((mydata)=>{setData(mydata)})
     }
