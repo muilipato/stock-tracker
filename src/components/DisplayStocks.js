@@ -45,8 +45,9 @@ function DisplayStocks(){
 
     
     return(
+        <><h1 className='header' > Stocks </h1>
        <div className='container'>
-        <h1 > Stocks </h1>
+        
         
                 <div className='table-container'>
                 <table>
@@ -107,6 +108,7 @@ function DisplayStocks(){
     
         
        </div>
+       </>
     )
 
 }
