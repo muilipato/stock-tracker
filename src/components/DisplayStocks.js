@@ -46,7 +46,7 @@ function DisplayStocks(){
     
     return(
        <div className='container'>
-        <h1> Stocks </h1>
+        <h1 > Stocks </h1>
         
                 <div className='table-container'>
                 <table>
@@ -89,11 +89,11 @@ function DisplayStocks(){
                 </table>
                 
             </div>
-            <div>
+            <div className='portfolio-container'>
             <Portfolio portfolio={portfolio} removeFromPortfolio={removeFromPortfolio}/>
             </div>
             <div>
-                    <h2>Company Description</h2>
+                    
                 {
                     selectedStock &&(
                         <Description stock={selectedStock} onClose={handleCloseDescription}/>
