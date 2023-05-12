@@ -1,10 +1,8 @@
 import React from 'react';
 import DisplayStocks from './DisplayStocks';
-import Portfolio from './Portfolio'
 import { BrowserRouter as Router, Route,Routes, Link } from 'react-router-dom';
-import {Switch} from 'react-router-dom';
 import Home from './Home';
-
+import './App.css';
 
 function App(){
     return(
