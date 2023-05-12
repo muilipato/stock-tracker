@@ -92,7 +92,7 @@ function DisplayStocks(){
             </div>
             <div className='portfolio-container'>
             <Portfolio portfolio={portfolio} removeFromPortfolio={removeFromPortfolio}/>
-            </div>
+                        </div>
             <div>
                     
                 {
