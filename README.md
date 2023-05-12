@@ -25,9 +25,15 @@ To start the app click [Stock-Tracker](https://muilipato.github.io/stock-tracker
 ## Routes
 `/` Home 
 
+![Home Page](screenshots/stocks-homepage.PNG)
+
 `/stocks` Stocks
 
+![Stocks Page](screenshots/stocks-stocks.PNG)
+
 `/portfolio` shows Portfolio 
+
+![Portfolio](screenshots/portfolio.PNG)
 
 ## License 
 This project is licensed under the [MIT license](LICENSE).
