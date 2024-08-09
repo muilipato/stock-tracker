@@ -7,7 +7,7 @@ import './App.css';
 function App(){
     return(
         <>
-        <Router>
+        <Router basename='/stock-tracker'>
         <nav className='navbar'>
             <ul className='nav-links'>
                 <li>
